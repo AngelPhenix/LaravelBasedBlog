@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 /** 
- * LECON SUR LARAVEL
+ * LECON SUR LARAVEL 001 ROUTING
  */
 
 Route::get('/test', function () {
@@ -44,5 +44,22 @@ Route::prefix('admin')->group(function() {
     
     Route::get('categories', function () {
         return 'Ma liste de catégories';
+    });
+});
+
+/** 
+ * LECON SUR LARAVEL 002 RESPONSES
+ */
+
+Route::prefix('test')->group(function() {
+    Route::get('articles', function () {
+        return redirect('/test/articles');
+    });
+
+    Route::get('users', function () {
+        return response()->json([
+            'name' => 'Jérémy',
+            'age' => 33
+        ]);
     });
 });
