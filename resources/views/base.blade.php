@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Ma page de view</title>
+    <title>Base de page</title>
   </head>
   <body>
-    @include('navbar');
-    <p>PAGE VIEW</p>
+    @include('incs.navbar')
+    @yield('content')
   </body>
 </html>
