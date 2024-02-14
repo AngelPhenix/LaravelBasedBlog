@@ -21,9 +21,6 @@ Route::get('/', function () {
  * LECON SUR LARAVEL 001 ROUTING
  */
 
-Route::get('/test', function () {
-    return 'GET ROUTE';
-});
 
 Route::post('/store', function () {
     return 'POST ROUTE';
@@ -53,7 +50,7 @@ Route::prefix('admin')->group(function() {
 
 Route::prefix('test')->group(function() {
     Route::get('articles', function () {
-        return redirect('/test/articles');
+        return redirect('/try/articles');
     });
 
     Route::get('users', function () {
@@ -62,4 +59,22 @@ Route::prefix('test')->group(function() {
             'age' => 33
         ]);
     });
+});
+
+/** 
+ * LECON SUR LARAVEL 003 VIEWS
+ */
+
+Route::get('/test', function () {
+    return view('test');
+});
+
+Route::get('/view', function () {
+    return view('folder.view');
+});
+
+Route::get('/test/{id}', function ($id) {
+    return view('test', [
+        'id' => $id
+    ]);
 });
