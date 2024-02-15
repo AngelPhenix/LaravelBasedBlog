@@ -1,6 +1,6 @@
 @extends('base')
 
-@@section('content')
+@section('content')
     <form action="/articles" method="post" class="form-example">
         @csrf
         <div class="form-example">

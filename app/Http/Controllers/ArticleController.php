@@ -27,7 +27,10 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->missing('name')){
+            die('null');
+        }
+        die('OK');
     }
 
     /**
