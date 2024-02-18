@@ -14,7 +14,7 @@ class MainController extends Controller
 
     public function index()
     {
-        $articles = Article::all();
+        $articles = Article::paginate(4);
         return view('articles', [
             'articles' => $articles
         ]);
