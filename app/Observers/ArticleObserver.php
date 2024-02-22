@@ -3,7 +3,7 @@
 namespace App\Observers;
 
 use App\Models\Article;
-use Cocur\Slugify\Slugify;
+use Illuminate\Support\Str;
 
 class ArticleObserver
 {
@@ -12,8 +12,7 @@ class ArticleObserver
      */
     public function created(Article $article): void
     {
-        $instance = new Slugify();
-        $article->slug = $instance->slugify($article->title);
+        $article->slug = Str::slug($article->title, '-');
         $article->save();
     }
 
