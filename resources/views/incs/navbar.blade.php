@@ -16,7 +16,7 @@
         <ul class="navbar-nav ml-auto">
           @if (Auth::user())
               <li class="nav-item">
-                <form action="POST" action="{{ route('logout') }}">
+                <form method="POST" action="{{ route('logout') }}">
                   @csrf
                   <button type="submit" class="btn">Déconnexion</button>
                 </form>
