@@ -20,7 +20,7 @@ Route::get('/', [MainController::class, 'home'])->name('home');
 Route::get('/home', [MainController::class, 'home'])->name('home');
 
 Route::get('/articles', [MainController::class, 'index'])->name('articles');
-Route::get('/articles/{slug}', [MainController::class, 'show'])->name('article');
+Route::get('/articles/{article:slug}', [MainController::class, 'show'])->name('article');
 
 Auth::routes();
 
