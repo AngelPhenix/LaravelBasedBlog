@@ -9,6 +9,11 @@
             <div class="form-group">
                 <label for="title">Titre</label>
                 <input type="text" name="title" class="form-control" placeholder="Titre de votre article">
+                @error('title')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
             </div>
         </div>
         <div class="col-12 mb-4">
@@ -16,12 +21,22 @@
                 <label for="subtitle">Sous-titre</label>
                 <input type="text" name="subtitle" class="form-control" placeholder="Sous-titre de votre article">
                 <small class="form-text text-muted">Décrire le contenu, le thème traité</small>
+                @error('subtitle')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
             </div>
         </div>
         <div class="col-12">
             <div class="form-group">
                 <label for="content">Contenu</label>
                 <textarea name="content" class="form-control w-100"></textarea>
+                @error('content')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
             </div>
         </div>
         <div class="d-flex justify-content-center mt-5">
