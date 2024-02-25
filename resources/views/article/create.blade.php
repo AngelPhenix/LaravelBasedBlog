@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h1 class="text-center mt-5">Poster un nouvel article</h1>
-    <form method="POST" action="#">
+    <form method="POST" action="{{ route('article.store') }}">
         @csrf
         <div class="col-12 mb-4">
             <div class="form-group">
