@@ -25,8 +25,6 @@ class AdminMiddleware
         if($user->role !== User::ADMIN_ROLE){
             return redirect()->route('login');
         }
-        
-        dd($user->role);
 
         return $next($request);
     }

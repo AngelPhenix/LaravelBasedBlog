@@ -15,6 +15,11 @@
         </ul>
         <ul class="navbar-nav ml-auto">
           @if (Auth::user())
+            @if (Auth::user()->role === "ADMIN")
+              <li class="nav-item">
+                <a class="nav-link active" href="{{ route('article.index') }}">Panel Admin</a>
+              </li>
+            @endif
               <li class="nav-item">
                 <form method="POST" action="{{ route('logout') }}">
                   @csrf
