@@ -2,6 +2,12 @@
 
 @section('content')
 <div class="container">
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-block">
+          <button type="button" class="close" data-dismiss="alert">X</button>
+          <strong>{{ $message }}</strong>
+        </div>
+    @endif
     <h1 class="text-center mt-5">Articles</h1>
     <div class="d-flex justify-content-center">
       <a href="{{ route('article.create') }}" class="btn btn-info my-4"><ai class="fas fa-plus mx-2"></i>Ajouter un article</a>

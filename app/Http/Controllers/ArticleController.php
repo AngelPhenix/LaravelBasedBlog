@@ -38,7 +38,7 @@ class ArticleController extends Controller
             'subtitle' => $request->input('subtitle'),
             'content' => $request->input('content')
         ]);
-        return redirect()->route('article.index');
+        return redirect()->route('article.index')->with('success', "L'article a bien été sauvegardé");
     }
 
     /**
