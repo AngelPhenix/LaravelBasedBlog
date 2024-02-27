@@ -70,6 +70,7 @@ class ArticleController extends Controller
      */
     public function delete(Article $article)
     {
-        //
+        $article->delete();
+        return redirect()->route('article.index')->with('success', "L'article a bien été supprimer.");
     }
 }
