@@ -23,18 +23,18 @@
                 <td>{{ $article->dateFormatted() }}</td>
                 <td class="d-flex">
                     <a href="#" class="btn btn-warning mx-3">Editer</a>
-                    <button type="button" class="btn btn-danger" onclick="document.getElementById('modal-open').style.display='block'">Supprimer</button>
+                    <button type="button" class="btn btn-danger" onclick="document.getElementById('modal-open-{{$article->id}}').style.display='block'">Supprimer</button>
                     <form action="{{ route('article.delete', $article->id) }}" method="post">
                       @csrf
                       @method("delete")
 
 
-                      <div class="modal" id="modal-open">
+                      <div class="modal" id="modal-open-{{$article->id}}">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header">
                               <h5 class="modal-title">SUPPRESSION D'ELEMENT DEFINITIVE</h5>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                              <button type="button" class="btn-close" onclick="document.getElementById('modal-open-{{$article->id}}').style.display='none'" data-bs-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true"></span>
                               </button>
                             </div>
@@ -43,7 +43,7 @@
                             </div>
                             <div class="modal-footer">
                               <button type="submit" class="btn btn-primary">Oui</button>
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="document.getElementById('modal-open-{{$article->id}}').style.display='none'">Annuler</button>
                             </div>
                           </div>
                         </div>
